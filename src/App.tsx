@@ -1,21 +1,25 @@
-import { Button } from "antd";
-import styles from "./a.module.less";
+import { Button, FloatButton } from "antd";
+import styles from "./app.module.less";
 import { useState } from "react";
+import { QuestionCircleOutlined } from '@ant-design/icons';
 
 function App() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
 
   const onChangeColor = () => {
-    const color = theme === 'light' ? 'rgb(255, 200, 200)' : 'rgb(77, 77, 77)'
-    document.documentElement.style.setProperty('--primaryColor', color);
+    const Bkcolor = theme == 'light' ? '#000' : '#f1f1f1'
+    const fColor = theme == 'light' ? '#fff' : '#555';
+    document.documentElement.style.setProperty('--primaryBkColor', Bkcolor);
+    document.documentElement.style.setProperty('--parmaryFColor', fColor);
 
     setTheme(theme === 'light' ? 'dark' : 'light')
   }
 
   return (
     <>
-      <div className={styles.red}>qwefqwef</div>
-      <Button onClick={onChangeColor}>Change Theme</Button>
+      <FloatButton onClick={() => console.log('click')} />
+      {/* <div className={styles.red}>qwefqwef</div> */}
+      <Button className={styles['change-theme']} onClick={onChangeColor}>{ theme === 'light' ? '深色主题' : '浅色主题'}</Button>
     </>
   )
 }
