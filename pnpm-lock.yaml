@@ -1,6 +1,9 @@
 lockfileVersion: '6.0'
 
 dependencies:
+  '@ant-design/icons':
+    specifier: ^5.1.4
+    version: 5.1.4(react-dom@18.2.0)(react@18.2.0)
   antd:
     specifier: ^5.5.1
     version: 5.5.1(react-dom@18.2.0)(react@18.2.0)
@@ -84,8 +87,8 @@ packages:
     resolution: {integrity: sha512-EB0iwlKDGpG93hW8f85CTJTs4SvMX7tt5ceupvhALp1IF44SeUFOMhKUOYqpsoYWQKAOuTRDMqn75rEaKDp0Xw==}
     dev: false
 
-  /@ant-design/icons@5.1.0(react-dom@18.2.0)(react@18.2.0):
-    resolution: {integrity: sha512-s7NJeBY2NS44+sAhpgaxtgvBda81vpVxLPXXdCWNXwIVR8T7DdhDsSZqqVMPlZwCKwRo89ksWhFifZo0Ulgxdw==}
+  /@ant-design/icons@5.1.4(react-dom@18.2.0)(react@18.2.0):
+    resolution: {integrity: sha512-YHKL7Jx3bM12OxvtiYDon04BsBT/6LGitYEqar3GljzWaAyMOAD8i/uF1Rsi5Us/YNdWWXBGSvZV2OZWMpJlcA==}
     engines: {node: '>=8'}
     peerDependencies:
       react: '>=16.0.0'
@@ -1025,7 +1028,7 @@ packages:
     dependencies:
       '@ant-design/colors': 7.0.0
       '@ant-design/cssinjs': 1.9.1(react-dom@18.2.0)(react@18.2.0)
-      '@ant-design/icons': 5.1.0(react-dom@18.2.0)(react@18.2.0)
+      '@ant-design/icons': 5.1.4(react-dom@18.2.0)(react@18.2.0)
       '@ant-design/react-slick': 1.0.1(react@18.2.0)
       '@babel/runtime': 7.21.5
       '@ctrl/tinycolor': 3.6.0
