@@ -1,12 +1,12 @@
 import styles from './index.module.less';
 import React, { useState } from 'react';
 
-export default function Login() {
-  const [ num, setNum ] = useState<number>(1)
+export default function Login(props: any) {
+  console.log('props', props.aaa);
 
   return (
     <>
-      <h1>我是登录页   { num  }</h1>
+      <h1>我是登录页   {props.quantity  }</h1>
 
     </>
   )

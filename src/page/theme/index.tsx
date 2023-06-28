@@ -36,7 +36,7 @@ export default function GlobalTheme() {
   }
 
   return (
-    <React.StrictMode>
+    // <React.StrictMode></React.StrictMode>
       <ConfigProvider theme={{
         token: {
           colorPrimary: data.colorPrimary,
@@ -58,6 +58,5 @@ export default function GlobalTheme() {
         </FloatButton.Group>
         <FloatButton description={theme == 'light' ? '深色模式' : '浅色模式'} shape="square" onClick={SwitchTheme} style={{ right: 24 }} icon={<Icons name='theme' />} />
       </ConfigProvider>
-    </React.StrictMode>
   )
 }

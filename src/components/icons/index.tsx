@@ -1,5 +1,4 @@
 export default function Icons(props: any) {
-  console.log('props', props);
   switch (props.name) {
     case 'theme':
       return (
