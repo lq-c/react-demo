@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import { useState } from 'react'
 import 'antd/dist/reset.css';
 import '../../main.less'
 import '../../common.less'
@@ -7,7 +7,6 @@ import {
   RouterProvider,
 } from 'react-router-dom';
 import { ConfigProvider, FloatButton } from 'antd';
-import { SettingOutlined, CustomerServiceOutlined } from '@ant-design/icons';
 import Icons from '../../components/icons/index.tsx';
 import styles from './index.module.less';
 
@@ -28,8 +27,10 @@ export default function GlobalTheme() {
     const colorPrimary = theme == 'light' ? '#76BA99' : '#1677ff';
     const Bkcolor = theme == 'light' ? '#000' : '#f1f1f1';
     const fontColor = theme == 'light' ? '#fff' : '#555';
+    const primaryHeaderColor = theme == 'light' ? 'rgba(18, 18, 18, .8)' : '#d8e2e7';
     document.documentElement.style.setProperty('--primaryBkColor', Bkcolor);
     document.documentElement.style.setProperty('--parmaryFColor', fontColor);
+    document.documentElement.style.setProperty('--primaryHeaderColor', primaryHeaderColor);
     setData({ ...data, colorPrimary: colorPrimary });
     setTheme(theme === 'light' ? 'dark' : 'light');
 
@@ -44,18 +45,17 @@ export default function GlobalTheme() {
         },
       }}>
         <div className={ styles.bigBody }>
-          <div className={styles.header}><div className={styles['header-body']}></div></div>
           <div className={styles.body}><RouterProvider router={router}></RouterProvider></div>
           <div className={styles.footer}>江山如此多娇，引无数英雄竞折腰</div>
         </div>
-        <FloatButton.Group
+        {/* <FloatButton.Group
           trigger="hover"
           type="primary"
           style={{ right: 94 }}
           icon={<SettingOutlined rev={undefined} />}
         >
           <FloatButton />
-        </FloatButton.Group>
+        </FloatButton.Group> */}
         <FloatButton description={theme == 'light' ? '深色模式' : '浅色模式'} shape="square" onClick={SwitchTheme} style={{ right: 24 }} icon={<Icons name='theme' />} />
       </ConfigProvider>
   )

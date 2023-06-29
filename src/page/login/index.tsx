@@ -7,7 +7,6 @@ export default function Login(props: any) {
   return (
     <>
       <h1>我是登录页   {props.quantity  }</h1>
-
     </>
   )
 }
