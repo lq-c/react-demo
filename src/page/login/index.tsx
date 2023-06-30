@@ -2,11 +2,15 @@ import styles from './index.module.less';
 import React, { useState } from 'react';
 
 export default function Login(props: any) {
-  console.log('props', props.aaa);
+  const gohome = () => {
+    window.location.pathname = '/home'
+  }
 
   return (
     <>
-      <h1>我是登录页   {props.quantity  }</h1>
+      <div className={styles['login-box']}>
+        <video onClick={gohome} src="/welcome.mp4" autoPlay muted ></video>
+      </div>
     </>
   )
 }

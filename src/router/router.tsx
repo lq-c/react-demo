@@ -8,10 +8,16 @@ import ErrorPage from '../404.tsx';
 import Home from '../page/home/index.tsx';
 import Theme from '../page/theme/index.tsx';
 import Article from '../page/home/article/index.tsx';
+import Login from '../page/login/index.tsx';
 
 const router = createBrowserRouter([
   {
     path: '/',
+    element: <Login></Login>,
+    errorElement: <ErrorPage></ErrorPage>
+  },
+  {
+    path: '/home',
     element: <Home></Home>,
     errorElement: <ErrorPage></ErrorPage>
   },

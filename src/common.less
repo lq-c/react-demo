@@ -1,6 +1,10 @@
 @primaryBkColor: var(--primaryBkColor);
 @parmaryFColor: var(--parmaryFColor);
 @primaryHeaderColor: var(--primaryHeaderColor);
+@primarySvgColor: var(--primarySvgColor);
+@primaryHomeMainBodyBkColor: var(--primaryHomeMainBodyBkColor);
+@primaryWriteColor: var(--primaryWriteColor);
+@primaryHoverBorderColor: var(--primaryHoverBorderColor);
 
 :root {
   --primaryBkColor: #f5f5f5;
@@ -8,9 +12,12 @@
   font-size: 14px;
   transition: border .2s linear, color .2s linear, background-color .2s linear;
   --primaryHeaderColor: #d8e2e7;
+  --primarySvgColor: #000;
+  --primaryHomeMainBodyBkColor: #ECF9FF;
+  --primaryWriteColor: #fff;
+  --primaryHoverBorderColor: #425aef;
 }
 
-// .svg{
-//   width: 10px;
-//   height: 10px;
-// }
+svg path {
+  fill: @primarySvgColor;
+}

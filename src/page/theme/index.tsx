@@ -25,12 +25,20 @@ export default function GlobalTheme() {
   const [theme, setTheme] = useState<'light' | 'dark'>('light')
   const SwitchTheme = () => {
     const colorPrimary = theme == 'light' ? '#76BA99' : '#1677ff';
-    const Bkcolor = theme == 'light' ? '#000' : '#f1f1f1';
+    const Bkcolor = theme == 'light' ? 'rgba(35,35,35,0.65)' : '#f1f1f1';
     const fontColor = theme == 'light' ? '#fff' : '#555';
     const primaryHeaderColor = theme == 'light' ? 'rgba(18, 18, 18, .8)' : '#d8e2e7';
+    const primarySvgColor = theme == 'light' ? '#fff' : '#000';
+    const primaryHomeMainBodyBkColor = theme == 'light' ? '#121723' : '#ECF9FF';
+    const primaryWriteColor = theme == 'light' ? 'rgba(35,35,35,0.65)' : '#fff';
+    const primaryHoverBorderColor = theme == 'light' ? '#8baaaa' : '#425aef';
     document.documentElement.style.setProperty('--primaryBkColor', Bkcolor);
     document.documentElement.style.setProperty('--parmaryFColor', fontColor);
     document.documentElement.style.setProperty('--primaryHeaderColor', primaryHeaderColor);
+    document.documentElement.style.setProperty('--primarySvgColor', primarySvgColor);
+    document.documentElement.style.setProperty('--primaryHomeMainBodyBkColor', primaryHomeMainBodyBkColor);
+    document.documentElement.style.setProperty('--primaryWriteColor', primaryWriteColor);
+    document.documentElement.style.setProperty('--primaryHoverBorderColor', primaryHoverBorderColor);
     setData({ ...data, colorPrimary: colorPrimary });
     setTheme(theme === 'light' ? 'dark' : 'light');
 
@@ -46,7 +54,7 @@ export default function GlobalTheme() {
       }}>
         <div className={ styles.bigBody }>
           <div className={styles.body}><RouterProvider router={router}></RouterProvider></div>
-          <div className={styles.footer}>江山如此多娇，引无数英雄竞折腰</div>
+          {/* <div className={styles.footer}>江山如此多娇，引无数英雄竞折腰</div> */}
         </div>
         {/* <FloatButton.Group
           trigger="hover"
