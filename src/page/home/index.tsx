@@ -1,9 +1,17 @@
 import styles from './index.module.less';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Icons from '../../components/icons/index.tsx';
 
 function Home() {
   const [showHeader, setShowHeader] = useState(true);
+
+  useEffect(() => {
+    console.log('888')
+  }, [])
+  
+  useEffect(() => {
+    console.log('777')
+  }, [])
 
 
   const headerSwitchDisplay = () => {
