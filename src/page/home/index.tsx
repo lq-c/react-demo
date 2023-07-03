@@ -1,16 +1,15 @@
 import styles from './index.module.less';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, JSXElementConstructor, Key, ReactElement, ReactFragment, ReactPortal } from 'react';
 import Icons from '../../components/icons/index.tsx';
+import axios from 'axios';
 
 function Home() {
   const [showHeader, setShowHeader] = useState(true);
+  const [banner, setBanner] = useState('Loading');
 
   useEffect(() => {
-    console.log('888')
-  }, [])
-  
-  useEffect(() => {
-    console.log('777')
+    // get banner text
+    axios.get('https://api.vvhan.com/api/ian?cl=wx').then(function (response) { setBanner(response.data) });
   }, [])
 
 
@@ -27,7 +26,19 @@ function Home() {
       <div className={styles.box}>
         {showHeader ? <Header></Header> : ''}
         <div className={styles['main-body']}>
-          <div className={styles.banner} onClick={clickBanner}>请不要把陌生人的些许善意，视为珍稀的瑰宝，却把身边亲近人的全部付出，当做天经地义的事情，对其视而不见。</div>
+          <div className={styles.banner} onClick={clickBanner}>{banner}</div>
+          <div className={ styles.module }>
+            <div className={styles['module-left']}>
+              <HotSearch></HotSearch>
+              <Audio></Audio>
+            </div>
+            <div className={styles['module-right']}>
+              <PerInfo></PerInfo>
+            </div>
+          </div>
+          {/* <div className={styles.funBar}>
+            <HotSearch></HotSearch>
+          </div> */}
         </div>
       </div>
     </>
@@ -66,6 +77,49 @@ function Header() {
   return (
     <div className={styles.header}>
       {items}
+    </div>
+  )
+}
+
+function HotSearch() {
+  const [hotSearch, setHotSearch] = useState<any>([]);
+
+  useEffect(() => {
+    // get weibo hot search
+    axios.get('https://api.vvhan.com/api/wbhot').then(function (response) {
+      const newdata = hotSearch.concat(response.data.data)
+      setHotSearch(newdata);
+    });
+  }, [])
+
+  return (
+    <div className={styles.hotSearch}>
+      <a style={{color: 'green'}}>&nbsp; &nbsp; 做人总得吃瓜吧 <span>置顶</span></a>
+      {hotSearch.map((item: {
+        url: string | undefined; title: string | undefined; hot: string | undefined
+      }, index: number) => {
+        return (
+          <a target='_blank' href={item.url} key={index}>{index + 1}&nbsp; &nbsp; {item.title} <span>{item.hot}</span></a>
+        )
+      })}
+    </div>
+  )
+}
+
+function Audio() {
+  return (
+    <div className={styles['audio-box']}>
+      <h2 style={{ fontWeight: '600' }}>听听阿刁吧~</h2>
+      <audio src="/public/adiao.mp3" controls></audio>
+    </div>
+  )
+}
+
+function PerInfo() {
+  return (
+    <div className={styles.perinfo}>
+      <img className={styles.avatar} src="/public/my-avatar.jpeg" alt="头像" />
+      <span>光怪</span>
     </div>
   )
 }

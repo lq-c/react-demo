@@ -16,8 +16,25 @@
   --primaryHomeMainBodyBkColor: #ECF9FF;
   --primaryWriteColor: #fff;
   --primaryHoverBorderColor: #425aef;
+
+  ::-webkit-scrollbar {
+    width: 6px;
+    // height: 10px; // 高度写不写，都不影响，因为会根据内容的长度自动计算
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: #ccc; // 滑块颜色
+    border-radius: 5px; // 滑块圆角
+  }
+  a {
+    text-overflow: ellipsis;
+  }
 }
 
-svg path {
-  fill: @primarySvgColor;
-}
+//  :root > *::-webkit-scrollbar-thumb:hover {
+//    background-color: #f40; // 鼠标移入滑块变红
+//  }
+
+// svg path {
+//   fill: @primarySvgColor;
+// }

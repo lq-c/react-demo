@@ -64,7 +64,10 @@ export default function GlobalTheme() {
         >
           <FloatButton />
         </FloatButton.Group> */}
-        <FloatButton description={theme == 'light' ? '深色模式' : '浅色模式'} shape="square" onClick={SwitchTheme} style={{ right: 24 }} icon={<Icons name='theme' />} />
+      {/* <FloatButton description={theme == 'light' ? '深色模式' : '浅色模式'} shape="square" onClick={SwitchTheme} style={{ right: 24 }} icon={<Icons name='theme' />} /> */}
+      <div className={styles.switchTheme} onClick={SwitchTheme}>
+        {theme == 'light' ? <Icons name='lightTheme' /> : <Icons name='darkTheme' />}
+      </div>
       </ConfigProvider>
   )
 }
