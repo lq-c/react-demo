@@ -1,5 +1,3 @@
-import styles from './index.module.less';
-import React, { useState } from 'react';
 
 export default function Settings(props: any) {
   console.log('props', props);

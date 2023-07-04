@@ -1,7 +1,6 @@
 import styles from './index.module.less';
-import React, { useState } from 'react';
 
-export default function Login(props: any) {
+export default function Login() {
   const gohome = () => {
     window.location.pathname = '/home'
   }

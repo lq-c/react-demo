@@ -6,7 +6,7 @@ import router from '../../router/router.tsx'
 import {
   RouterProvider,
 } from 'react-router-dom';
-import { ConfigProvider, FloatButton } from 'antd';
+import { ConfigProvider } from 'antd';
 import Icons from '../../components/icons/index.tsx';
 import styles from './index.module.less';
 

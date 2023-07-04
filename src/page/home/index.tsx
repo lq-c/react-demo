@@ -1,21 +1,16 @@
 import styles from './index.module.less';
-import { useState, useEffect, JSXElementConstructor, Key, ReactElement, ReactFragment, ReactPortal } from 'react';
+import { useState, useEffect } from 'react';
 import Icons from '../../components/icons/index.tsx';
 import axios from 'axios';
 
 function Home() {
-  const [showHeader, setShowHeader] = useState(true);
+  const [showHeader] = useState(true);
   const [banner, setBanner] = useState('Loading');
 
   useEffect(() => {
     // get banner text
     axios.get('https://api.vvhan.com/api/ian?cl=wx').then(function (response) { setBanner(response.data) });
   }, [])
-
-
-  const headerSwitchDisplay = () => {
-    setShowHeader(!showHeader);
-  }
 
   const clickBanner = () => {
     alert('遇事不决,可问春风')
